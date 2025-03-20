@@ -1,11 +1,11 @@
 import axios from 'axios';
-import ApplicationUrls from '../component/urls/ApplicationUrls';
 
 export default class LoginService {
-        
+    static USER_LOGIN_API_BASE_URL = "http://localhost:8080/login-controller/login";
+
     static async login(username, password) {
         try {
-            const response = await axios.post(ApplicationUrls.LOGIN_URL, {
+            const response = await axios.post(this.USER_LOGIN_API_BASE_URL, {
                 username,
                 password,
             });

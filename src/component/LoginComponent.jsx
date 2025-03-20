@@ -30,12 +30,14 @@ class LoginComponent extends Component {
     }
     validateLoginCredentials = (e) => {
         e.preventDefault();
-        let userLoginCred = { username: this.state.username, password: this.state.password };
-        console.log('candidateFetchQuery => ' + JSON.stringify(userLoginCred));
 
-        LoginService.login(userLoginCred).then(res => {
-            alert("Login Sucess!");
-            this.props.history.push('/home');
+        LoginService.login(this.state.username, this.state.password).then(res => {
+            if(res.success){
+                alert('Login Successful');
+            }else{
+                alert('Login Failed');
+            }
+            // this.props.history.push('/home');
         });
     }
     render() {
