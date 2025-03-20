@@ -1,42 +1,41 @@
 import React, { Component } from 'react';
-// import CandidateRegistrationService from '../service/CandidateRegistrationService';
 
 class RegisterUser extends Component {
     constructor(props){
           super(props) 
           this.state = {
-             candidateFirstName: '',
-             candidateLastName: '',
-             emailId: '',
-             candidateUserName: '',
-             candidatePassword: '',
+            firstName: '',
+            lastName: '',
+            emailId: '',
+            password: '',
+            dateOfBirth: '',
+            phoneNumber: ''
           } 
-          this.changeCandidateFirstNameHandler = this.changeCandidateFirstNameHandler.bind(this);
-          this.changeCandidateLastNameHandler = this.changeCandidateLastNameHandler.bind(this);
-          this.changeEmailIdHandler = this.changeEmailIdHandler.bind(this);
-          this.changeUsernameHandler = this.changeUsernameHandler.bind(this);
-          this.changePasswordHandler = this.changePasswordHandler.bind(this);
-          this.registerCandidate = this.registerCandidate.bind(this);
+          
         }
-        changeCandidateFirstNameHandler= (event) =>{
-            this.setState({candidateFirstName: event.target.value});
+        changeCandidateFirstNameHandler = (event) => {
+            this.setState({ candidateFirstName: event.target.value });
         }
-        changeCandidateLastNameHandler= (event) =>{
-            this.setState({candidateLastName: event.target.value});
+
+        changeCandidateLastNameHandler = (event) => {
+            this.setState({ candidateLastName: event.target.value });
         }
-        changeEmailIdHandler= (event) =>{
-            this.setState({emailId: event.target.value});
+
+        changeEmailIdHandler = (event) => {
+            this.setState({ emailId: event.target.value });
         }
-        changeUsernameHandler= (event) =>{
-            this.setState({candidateUserName: event.target.value});
+
+        changeUsernameHandler = (event) => {
+            this.setState({ candidateUserName: event.target.value });
         }
-        changePasswordHandler= (event) =>{
-            this.setState({candidatePassword: event.target.value});
+
+        changePasswordHandler = (event) => {
+            this.setState({ candidatePassword: event.target.value });
         }
         cancel(){
             this.props.history.push('/..');
         }
-        registerCandidate = (e) =>{
+        registerUser = (e) =>{
             e.preventDefault();
             let candidate = {candidateFirstName: this.state.candidateFirstName, candidateLastName: this.state.candidateLastName, 
                 emailId: this.state.emailId, candidateUserName: this.state.candidateUserName, candidatePassword: this.state.candidatePassword};
@@ -50,11 +49,11 @@ class RegisterUser extends Component {
         
     render() {
         return (
-            <div>
+            <div style={{ marginBlockStart: '40px' }}>
                <div className = "container">
                    <div className = "row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">Candidate SignUp</h3>
+                            <h3 className="text-center">User Registration Page</h3>
                             <div className ="card-body">
                                 <form>
                                     <div className ="form-group">

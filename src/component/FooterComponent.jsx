@@ -6,14 +6,12 @@ class FooterComponent extends Component {
     }
     render() {
         return (
-            <div>
-                <footer>
-
-                <div class="footer-copyright text-center py-3">© 2021 Copyright: 
-                    <a href="#">ExamPlatform.com</a>
-                </div>
-
-                </footer>
+            <div style={{ marginBlockStart: '10px' }}>
+            <footer>
+            <div className="footer-copyright text-center py-3">© 2025 Copyright:
+            <a href="#" style={{ textDecoration: 'none' }}> travel-management.com</a>
+            </div>
+            </footer>
             </div>
         );
     }
